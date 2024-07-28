@@ -106,6 +106,8 @@
             <Form>DialogForm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="uInterfaces.pas"/>
+        <DCCReference Include="GUIAsInterface.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

@@ -13,7 +13,7 @@ object Main: TMain
   TextHeight = 15
   object lblResult: TLabel
     Left = 8
-    Top = 54
+    Top = 64
     Width = 32
     Height = 15
     Caption = 'Result'

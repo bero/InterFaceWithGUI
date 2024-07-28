@@ -3,19 +3,24 @@
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+  System.Classes,
+  System.SysUtils,
+  System.Variants,
+  Vcl.Controls,
+  Vcl.Dialogs,
+  Vcl.Forms,
+  Vcl.Graphics,
+  Vcl.StdCtrls,
+  Winapi.Messages,
+  Winapi.Windows;
 
 type
   TMain = class(TForm)
     lblResult: TLabel;
     btnResult: TButton;
     txtResult: TEdit;
+    btnName: TButton;
     procedure btnResultClick(Sender: TObject);
-  private
-    { Private declarations }
-  public
-    { Public declarations }
   end;
 
 var
@@ -26,13 +31,14 @@ implementation
 {$R *.dfm}
 
 uses
-  Dialog;
+  GUIAsInterface,
+  uInterfaces;
 
 procedure TMain.btnResultClick(Sender: TObject);
 var
   sName: string;
 begin
-  sName := TDialogForm.Execute(txtResult.Text);
+  sName := (GUI as ITestDlg).Execute(txtResult.Text);
   if sName <> '' then
   begin
     txtResult.Text := sName;

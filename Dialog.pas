@@ -4,34 +4,36 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,
+  uInterfaces;
 
 type
-  TDialogForm = class(TForm)
+  TDialogForm = class(TForm, ITestDlg)
     btnOk: TButton;
     btnCancel: TButton;
     lblName: TLabel;
     txtName: TEdit;
   public
-    class function Execute(const AName: string): string;
+    function Execute(const AName: string): string;
   end;
 
 implementation
 
 {$R *.dfm}
 
-{ TDialogForm }
+uses
+  GUIAsInterface;
 
-class function TDialogForm.Execute(const AName: string): string;
-var
-  oDialog: TDialogForm;
+function TDialogForm.Execute(const AName: string): string;
 begin
-  oDialog := TDialogForm.Create(nil);
-  oDialog.txtName.Text := AName;
-  if oDialog.ShowModal = mrOk then
+  txtName.Text := AName;
+  if ShowModal = mrOk then
   begin
-    Result := oDialog.txtName.text;
+    Result := txtName.text;
   end;
 end;
+
+initialization
+  Gui.RegisterForm(ITestDlg, TDialogForm);
 
 end.

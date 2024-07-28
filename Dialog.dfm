@@ -24,7 +24,7 @@ object DialogForm: TDialogForm
     Caption = 'Name'
   end
   object btnOk: TButton
-    Left = 50
+    Left = 42
     Top = 68
     Width = 65
     Height = 31
@@ -35,7 +35,7 @@ object DialogForm: TDialogForm
     TabOrder = 0
   end
   object btnCancel: TButton
-    Left = 137
+    Left = 129
     Top = 68
     Width = 71
     Height = 31
@@ -48,7 +48,7 @@ object DialogForm: TDialogForm
   object txtName: TEdit
     Left = 62
     Top = 21
-    Width = 150
+    Width = 138
     Height = 23
     TabOrder = 2
     TextHint = 'Enter any name here'
