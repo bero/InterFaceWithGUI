@@ -1,2 +1,2 @@
 # InterFaceWithGUI
-Small demo shoing how to use interfaces with modal dialog
+Small demo showing how to use interfaces with modal dialog
