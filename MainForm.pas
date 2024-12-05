@@ -19,7 +19,6 @@ type
     lblResult: TLabel;
     btnResult: TButton;
     txtResult: TEdit;
-    btnName: TButton;
     procedure btnResultClick(Sender: TObject);
   end;
 
